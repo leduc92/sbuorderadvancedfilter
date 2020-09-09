@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "shopware/core": "~6.3.0"
+        "shopware/core": "~6.2.0"
     },
     "extra": {
         "shopware-plugin-class": "Sbu\\OrderAdvancedFilter\\SbuOrderAdvancedFilter",
