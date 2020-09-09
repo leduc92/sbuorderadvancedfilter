@@ -1,0 +1,38 @@
+{
+    "name": "sbu/sbuorderadvancedfilter",
+    "description": "Order Advanced Filter plugin for Shopware 6",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Duc Le Duc",
+            "email": "duc.leduc92@gmail.com"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.3.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Sbu\\OrderAdvancedFilter\\SbuOrderAdvancedFilter",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by shopware AG",
+        "label": {
+            "de-DE": "Order Advanced Filter for für Shopware 6",
+            "en-GB": "Order Advanced Filter for Shopware 6"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sbu\\OrderAdvancedFilter\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "conflict": {
+        "shopware/storefront": "<6,>=7",
+        "shopware/administration": "<6,>=7"
+    },
+    "prefer-stable": true
+}

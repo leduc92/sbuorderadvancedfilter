@@ -1,0 +1,62 @@
+{% block sbu_order_advanced_filter_collapse %}
+    <sw-collapse :expandOnLoading="false">
+
+        {% block sbu_order_advanced_filter_collapse_header %}
+            <template #header="{ expanded }">
+                <div class="sbu-order-advance-filter__collapse-header">
+
+                    {% block sbu_order_advanced_filter_collapse_header_title %}
+                        <h4 class="sbu-order-advance-filter__collapse-title">
+
+                            {{ title }}
+
+                            {% block sbu_order_advanced_filter_collapse_header_label_closed %}
+                                <div v-if="!expanded" class="sbu-order-advance-filter__collapse-label">
+                                    <slot name="filtering">
+
+                                    </slot>
+                                </div>
+                            {% endblock %}
+
+                        </h4>
+                    {% endblock %}
+
+                    {% block sbu_order_advanced_filter_collapse_header_icon_expanded %}
+                        <sw-icon
+                            v-if="expanded"
+                            key="filter-collapse-expanded-indicator"
+                            class="sw-media-collapse__button"
+                            name="small-arrow-small-down">
+                        </sw-icon>
+                    {% endblock %}
+
+                    {% block sbu_order_advanced_filter_collapse_header_icon_closed %}
+                        <sw-icon
+                            v-else
+                            key="filter-collapse-expanded-indicator"
+                            class="sw-media-collapse__button"
+                            name="small-arrow-small-right">
+                        </sw-icon>
+                    {% endblock %}
+
+                </div>
+            </template>
+        {% endblock %}
+
+        {% block sbu_order_advanced_filter_collapse_panel_content %}
+            <template #content>
+                <div class="sbu-order-advance-filter__collapse-content">
+                    <slot name="content">{% block sbu_order_advanced_filter_collapse_panel_content_slot %}{% endblock %}</slot>
+
+                    {% block sbu_order_advanced_filter_collapse_panel_content_clear %}
+                        <a class="sbu-order-advance-filter__collapse-clear" :class="{active: enableClear}" @click="onClear">
+                            {{ $tc('sbu-order-advanced-filler.clear') }}
+                        </a>
+                    {% endblock %}
+
+                </div>
+            </template>
+        {% endblock %}
+
+    </sw-collapse>
+{% endblock %}

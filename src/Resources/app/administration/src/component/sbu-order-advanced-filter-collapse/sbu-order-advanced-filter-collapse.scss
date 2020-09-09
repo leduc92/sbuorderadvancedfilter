@@ -1,0 +1,44 @@
+@import "~scss/variables";
+
+.sbu-order-advance-filter{
+    &__collapse-title {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0 25px 0;
+    }
+
+    &__collapse-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        cursor: pointer;
+        padding: 16px 0;
+        color: #607182;
+        border-top: 1px solid $color-steam-cloud;
+
+        .sw-media-collapse__button {
+            margin-right: 25px;
+        }
+    }
+
+    &__collapse-label {
+        margin-top: 8px;
+    }
+
+    &__collapse-content {
+        margin: 16px 25px 0;
+    }
+
+    &__collapse-clear {
+        cursor: default;
+        margin-top: -22px;
+        margin-bottom: 12px;
+        display: block;
+        color: $color-gray;
+        font-size: 13px;
+    }
+
+    &__collapse-clear.active {
+        cursor: pointer;
+        color: $color-module-blue-900;
+    }
+}

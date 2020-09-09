@@ -1,0 +1,292 @@
+{% block sw_order_list_sidebar_filter %}
+    {% block sw_order_list_sidebar_filter_items %}
+        <sw-sidebar-item icon="default-action-filter" :badge="numberOfFiltering" :title="$tc('sw-order.list.titleSidebarItemFilter')">
+            <div class="sw-sidebar-item__overview">
+
+                {% block sw_order_list_sidebar_filter_content %}
+                    <div class="sw-sidebar-item__filter-content">
+                            {% block sw_order_list_sidebar_filter_order_status_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.order_status')"
+                                    :enableClear="!!orderStateId"
+                                    @on-clear="onClearOrderStatus">
+
+                                    {% block sw_order_list_sidebar_filter_order_status_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.orderStateSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.orderStateSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_order_status %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="orderStateId"
+                                                :options="orderStatuses">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_payment_status_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.payment_status')"
+                                    :enableClear="!!paymentStateId"
+                                    @on-clear="onClearPaymentStatus">
+
+                                    {% block sw_order_list_sidebar_filter_payment_status_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.paymentStateSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.paymentStateSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_payment_status %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="paymentStateId"
+                                                :options="paymentStatuses">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_delivery_status_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.delivery_status')"
+                                    :enableClear="!!deliveryStateId"
+                                    @on-clear="onClearDeliveryStatus">
+
+                                    {% block sw_order_list_sidebar_filter_delivery_status_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.deliveryStateSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.deliveryStateSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_delivery_status %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="deliveryStateId"
+                                                :options="deliveryStatuses">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_sales_channel_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.sales_channel')"
+                                    :enableClear="!!salesChannelId"
+                                    @on-clear="onClearSalesChannel">
+
+                                    {% block sw_order_list_sidebar_filter_sales_channel_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.salesChannelSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.salesChannelSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_sales_channel %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="salesChannelId"
+                                                :options="salesChannels">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_shipping_method_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.shipping_method')"
+                                    :enableClear="!!shippingMethodId"
+                                    @on-clear="onClearShippingMethod">
+
+                                    {% block sw_order_list_sidebar_filter_shipping_method_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.shippingMethodSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.shippingMethodSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_shipping_method %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="shippingMethodId"
+                                                :options="shippingMethods">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_payment_method_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.payment_method')"
+                                    :enableClear="!!paymentMethodId"
+                                    @on-clear="onClearPaymentMethod">
+
+                                    {% block sw_order_list_sidebar_filter_payment_method_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.paymentMethodSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.paymentMethodSelected.name }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_payment_method %}
+                                        <template #content>
+                                            <sw-radio-field
+                                                v-model="paymentMethodId"
+                                                :options="paymentMethods">
+                                            </sw-radio-field>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_dates_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sbu-order-advanced-filler.date')"
+                                    :enableClear="!!byDate"
+                                    @on-clear="onClearDates">
+
+                                    {% block sw_order_list_sidebar_filter_dates_selected %}
+                                        <template #filtering>
+                                            <sw-label v-if="filtering.dateSelected" appearance="pill" variant="neutral" size="medium">
+                                                {{ filtering.dateSelected }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_dates %}
+                                        <template #content>
+
+                                            {% block sw_order_list_sidebar_filter_dates_options %}
+                                                <sw-radio-field
+                                                    v-model="byDate"
+                                                    :options="datesOptions"
+                                                    @change="onChangeFilterByDates">
+                                                </sw-radio-field>
+                                            {% endblock %}
+
+                                            {% block sw_order_list_sidebar_filter_custom_start_date %}
+                                                <sw-datepicker
+                                                    dateType="date"
+                                                    v-if="isCustomDate"
+                                                    v-model="customStartDate"
+                                                    :label="$tc('sbu-order-advanced-filler.start_date')">
+                                                </sw-datepicker>
+                                            {% endblock %}
+
+                                            {% block sw_order_list_sidebar_filter_custom_end_date %}
+                                                <sw-datepicker
+                                                    v-if="isCustomDate"
+                                                    v-model="customEndDate"
+                                                    :label="$tc('sbu-order-advanced-filler.end_date')">
+                                                </sw-datepicker>
+                                            {% endblock %}
+
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_affiliate_code_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sw-order.list.titleSidebarItemFilterAffiliateCode')"
+                                    :enableClear="!!affiliateCodeFilter.length"
+                                    @on-clear="onClearAffiliateCode">
+
+                                    {% block sw_order_list_sidebar_filter_affiliate_code_selected %}
+                                        <template #filtering>
+                                            <sw-label v-for="affiliateCode in affiliateCodeFilter" appearance="pill" variant="neutral" size="medium" :key="affiliateCode">
+                                                {{ affiliateCode }}
+                                            </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_affiliate_code %}
+                                        <template #content>
+                                                <sw-multi-select
+                                                    :options="availableAffiliateCodes"
+                                                    :isLoading="filterLoading"
+                                                    valueProperty="key"
+                                                    labelProperty="key"
+                                                    :value="affiliateCodeFilter"
+                                                    @change="onChangeAffiliateCodeFilter">
+                                                </sw-multi-select>
+                                        </template>
+                                    {% endblock %}
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                            {% block sw_order_list_sidebar_filter_campaign_code_collapse %}
+                                <sbu-order-advanced-filter-collapse
+                                    :title="$tc('sw-order.list.titleSidebarItemFilterCampaignCode')"
+                                    :enableClear="!!campaignCodeFilter.length"
+                                    @on-clear="onClearCampaignCode">
+
+                                    {% block sw_order_list_sidebar_filter_campaign_code_selected %}
+                                        <template #filtering>
+                                                <sw-label v-for="campaignCode in campaignCodeFilter" appearance="pill" variant="neutral" size="medium" :key="campaignCode">
+                                                    {{ campaignCode }}
+                                                </sw-label>
+                                        </template>
+                                    {% endblock %}
+
+                                    {% block sw_order_list_sidebar_filter_campaign_code %}
+                                        <template #content>
+                                                <sw-multi-select
+                                                    :options="availableCampaignCodes"
+                                                    :isLoading="filterLoading"
+                                                    valueProperty="key"
+                                                    labelProperty="key"
+                                                    @change="onChangeCampaignCodeFilter"
+                                                    :value="campaignCodeFilter">
+                                                </sw-multi-select>
+                                        </template>
+                                    {% endblock %}
+
+                                </sbu-order-advanced-filter-collapse>
+                            {% endblock %}
+
+                    </div>
+                {% endblock %}
+
+                {% block sw_order_list_sidebar_filter_clear_all_filters %}
+                    <div class="sw-sidebar-item__filter-clear_all">
+
+                        {% block sw_order_list_sidebar_filter_clear_all_filters_button %}
+                            <sw-button
+                                size="small"
+                                class="sw-order-list-sidebar-filter-clear-filter"
+                                :disabled="numberOfFiltering === 0"
+                                @click="onClearAllFilter">
+                                {{ $tc('sbu-order-advanced-filler.clear_all_filters') }}
+                            </sw-button>
+                        {% endblock %}
+
+                    </div>
+                {% endblock %}
+            </div>
+
+        </sw-sidebar-item>
+    {% endblock %}
+{% endblock %}

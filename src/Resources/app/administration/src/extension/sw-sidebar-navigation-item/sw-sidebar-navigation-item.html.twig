@@ -1,0 +1,14 @@
+{% block sw_sidebar_navigation_item_content %}
+
+    {% parent() %}
+
+    <sw-label
+        v-if="sidebarItem.badge && !sidebarItem.showContent"
+        class="sw-sidebar-navigation-item-badge"
+        variant="info"
+        size="small"
+        appearance="circle">
+        {{ sidebarItem.badge }}
+    </sw-label>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{
+    "sbu-order-advanced-filler": {
+        "sales_channel": "Sales channel",
+        "shipping_method": "Shipping method",
+        "payment_method": "Payment method",
+        "order_status": "Order status",
+        "payment_status": "Payment status",
+        "delivery_status": "Delivery status",
+        "date": "Date",
+        "start_date": "Starting",
+        "end_date": "Ending",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "last_seven_days": "Last 7 days",
+        "last_thirty_days": "Last 30 days",
+        "this_month": "This month",
+        "last_month": "Last month",
+        "custom": "Custom",
+        "clear": "Clear",
+        "clear_all_filters": "Clear all filters",
+        "date_starting": "Starting {starting}",
+        "date_ending": "Ending {ending}"
+    }
+}
