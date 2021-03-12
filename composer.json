@@ -11,14 +11,14 @@
         }
     ],
     "require": {
-        "shopware/core": "~6.3.1"
+        "shopware/core": "^6.3"
     },
     "extra": {
         "shopware-plugin-class": "Sbu\\OrderAdvancedFilter\\SbuOrderAdvancedFilter",
         "plugin-icon": "src/Resources/config/plugin.png",
         "copyright": "(c) by shopware AG",
         "label": {
-            "de-DE": "Order Advanced Filter for für Shopware 6",
+            "de-DE": "Erweiterter Filter für Bestellungen in Shopware 6",
             "en-GB": "Order Advanced Filter for Shopware 6"
         }
     },
