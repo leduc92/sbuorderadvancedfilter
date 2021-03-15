@@ -7,8 +7,8 @@
         "payment_status": "Zahlungsstatus",
         "delivery_status": "Lieferstatus",
         "date": "Datum",
-        "start_date": "Beginnend",
-        "end_date": "Ende",
+        "start_date": "Von",
+        "end_date": "Bis",
         "today": "Heute",
         "yesterday": "Gestern",
         "last_seven_days": "Letzten 7 Tage",
@@ -16,9 +16,9 @@
         "this_month": "Diesen Monat",
         "last_month": "Im vergangenen Monat",
         "custom": "Benutzerdefiniert",
-        "clear": "Klar",
-        "clear_all_filters": "Löschen Sie alle Filter",
-        "date_starting": "Beginnend {starting}",
-        "date_ending": "Ende {ending}"
+        "clear": "Filter löschen",
+        "clear_all_filters": "Alle Filter löschen",
+        "date_starting": "Von {starting}",
+        "date_ending": "Bis {ending}"
     }
 }
