@@ -227,6 +227,8 @@ Component.override('sw-order-list', {
         async getDefaultOptions() {
             const criteria = new Criteria();
             criteria.addSorting({ field: 'name', order: 'ASC' });
+            criteria.addFilter(Criteria.equals('active', true));
+            criteria.setLimit(50);
 
             Promise.all([
                 this.getShippingMethods(criteria),
